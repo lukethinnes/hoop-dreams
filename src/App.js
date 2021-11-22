@@ -1,6 +1,4 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-browser-router";
+import { BrowserRouter as Router, Route } from "react-browser-router";
 import "./App.css";
 import Home from "./components/Home";
 import Player from "./components/Player";

@@ -43,7 +43,7 @@ export default function Home() {
               if (search === "") {
                 return player;
               } else if (
-                search.toLowerCase().includes(player.first_name.toLowerCase)
+                player.first_name.toLowerCase().includes(search.toLowerCase())
               ) {
                 return player;
               }
