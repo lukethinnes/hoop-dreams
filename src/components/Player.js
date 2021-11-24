@@ -8,21 +8,27 @@ export default function Player({ match }) {
     params: { playerId },
   } = match;
 
-  const [players, setPlayers] = useState([]);
+  const [player, setPlayer] = useState([]);
 
   useEffect(() => {
     const getPlayers = async () => {
       const response = await axios.get(
-        `https://www.balldontlie.io/api/v1/players/${playerId}`
+        `http://www.balldontlie.io/api/v1/players/${playerId}`
       );
-      console.log(response.data);
-      setPlayers(response.data);
+      console.log(Object.values(response.data.team)[1]);
+      setPlayer(response.data);
     };
     getPlayers();
   }, []);
   return (
-    <h1>
-      {players.first_name} {players.last_name}
-    </h1>
+    <div className="App">
+      <h1>
+        {player.first_name} {player.last_name}
+      </h1>
+      <h2>Player Stats:</h2>
+      <h3>Position: {player.position}</h3>
+      <h3>City: {Object.values(player.team)[1]}</h3>
+      <h3>Team Name:: {Object.values(player.team)[6]}</h3>
+    </div>
   );
 }

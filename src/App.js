@@ -5,7 +5,7 @@ import Player from "./components/Player";
 
 export default function App() {
   return (
-    <Router>
+    <Router className="App">
       <div>
         <Route exact path="/" component={Home} />
         <Route path="/player/:playerId" component={Player} />

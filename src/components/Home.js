@@ -49,9 +49,10 @@ export default function Home() {
               }
             })
             .map((player) => {
+              console.log(player);
               return (
-                <h4>
-                  <Link to="/{player.id}">
+                <h4 key={player.id}>
+                  <Link to={`/player/${player.id}`}>
                     {player.first_name} {player.last_name}
                   </Link>
                 </h4>
